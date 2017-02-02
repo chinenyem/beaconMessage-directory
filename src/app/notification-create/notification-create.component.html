@@ -1,0 +1,57 @@
+
+
+
+    <div class="row">
+      <div class="col-lg-6 form-group">
+      <form [formGroup]="complexForm" (ngSubmit)="submitForm(complexForm.value)">
+      <md-card>
+          <md-toolbar color="primary">Create Notification</md-toolbar>
+        <md-card-content>
+          <md-card-header>
+            <md-input class="title" placeholder="Title Of Notififcation Message"
+                  id="title"
+                  required
+                  [formControl]="complexForm.controls['title']" name="title"
+                  required
+                  (ngModelChange)="titleChange($event)"
+                  [ngModel]="newTitle"
+                  ></md-input>
+          </md-card-header>
+          <input class="form-control" [formControl]="complexForm.controls['image']"
+                type="file"
+                name="image"
+                (change)="fileChange(input)"
+                id="image"  #input/>
+          <md-textarea [formControl]="complexForm.controls['message']"
+                        required rows="3"
+                        placeholder="Type Notification Message Here"
+                        id="message"
+                        (ngModelChange)="messageChange($event)"
+                        [ngModel]="newMessage"
+                        ></md-textarea>
+        </md-card-content>
+        <md-card-actions layout="column" layout-align="end end">
+          <button md-fab class="fab" type="submit">
+              <md-icon class="md-24">add</md-icon>
+          </button>
+        </md-card-actions>
+      </md-card>
+    </form>
+    </div>
+      <div class="col-lg-6">
+      <md-card>
+        <md-toolbar color="primary">Preview Notification</md-toolbar>
+        <md-card-content>
+            <md-card-header>
+              <md-card-title>{{newTitle}}</md-card-title>
+            </md-card-header>
+            <div *ngFor="let file_src of file_srcs" class="imagediv">
+                <img md-card-image  [attr.src]='file_src' alt=""/>
+            </div>
+            <p class="newMessage">
+              {{newMessage}}
+            </p>
+        </md-card-content>
+      </md-card>
+    </div>
+    </div>

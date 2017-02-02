@@ -1,0 +1,39 @@
+<md-card>
+  <md-card-header>
+      <md-card-title><h4>List Of Notifications</h4></md-card-title>
+  </md-card-header>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Notification Name</th>
+        <th>Created On</th>
+        <th>Edit</th>
+        <th>Deactivate</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let notification of notifications | async; let i = index; ">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ notification.title }}</td>
+        <td>{{ notification.timestamp | date:'fullDate' }}</td>
+        <td>
+           <a [routerLink]="['/notification', notification.$key]"><button md-mini-fab>
+            <md-icon class="md-24">mode_edit</md-icon>
+          </button></a>
+        </td>
+        <td>
+          <md-checkbox checked="{{ notification.deactivated }}" (change)="deactivateNotification(notification)">
+            Deactivated
+          </md-checkbox>
+        </td>
+        <td>
+          <button md-mini-fab (click)="removeItemFromList(notification)">
+            <md-icon class="md-24">clear</md-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</md-card>

@@ -1,0 +1,24 @@
+
+<div id="background"></div>
+
+<header id="page-header"><section id="hamburger" ><span class="line"></span><span class="line"></span><span class="line"></span></section></header>
+<nav id="sidebar-nav">
+  <header id="sidebar-header">
+    <div id="profile-info">
+      <h3 id="profile-name">IBeacon</h3>
+      <h4 id="blurb">Notify Fans</h4>
+    </div><section id="btn-more"><span class="dot"></span><span class="dot"></span><span class="dot"></span></section>
+  </header>
+  <ul id="sidebar-nav-list">
+    <li id="nav-item-Home" class="sidebar-nav-item"><a [routerLink]="['/']">Home</a></li>
+    <li id="nav-item-Home" class="sidebar-nav-item"><a [routerLink]="['/dashboard']">Dashboard</a></li>
+    <li id="nav-item-Social" class="sidebar-nav-item"><a [routerLink]="['/beacons']">Manage Beacons</a></li>
+    <li id="nav-item-Mail" class="sidebar-nav-item"><a [routerLink]="['/list-notifications']">Manage Notifications</a></li>
+    <li id="nav-item-Mail" class="sidebar-nav-item"><a [routerLink]="['/create-notification']">Create Notification</a></li>
+    <li id="nav-item-Pictures" class="sidebar-nav-item"><a href="#">Log Out</a></li>
+    <li id="nav-item-Music" class="sidebar-nav-item"><a [routerLink]="['/account']">Account</a></li>
+  </ul>
+</nav><section id="nav-screen-overlay"></section>
+<section class="container">
+   <router-outlet></router-outlet>
+</section>

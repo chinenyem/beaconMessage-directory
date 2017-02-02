@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "mapRoot": "./",
+    "module": "es6",
+    "moduleResolution": "node",
+    "outDir": "../dist/out-tsc",
+    "sourceMap": true,
+    "target": "es6",
+    "typeRoots": [
+      "../node_modules/@types"
+    ],
+    "types": [
+      "node",
+      "hammerjs"
+    ],
+    "exclude":[
+      "node_modules",
+      "node_modules/@typings",
+      "typings"
+    ]
+  }
+}

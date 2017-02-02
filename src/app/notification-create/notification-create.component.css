@@ -1,0 +1,20 @@
+.title {
+  margin-bottom: 31px;
+}
+
+.imagediv{
+  margin-top: 3px;
+}
+
+.md-card-title {
+  font-size: 23px !important;
+  margin-top: 12px !important;
+}
+
+.md-textarea {
+  margin-top: 25px;
+}
+
+.newMessage {
+ margin-left: 10px;
+}
